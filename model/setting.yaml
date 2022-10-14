@@ -1,0 +1,32 @@
+# The data normalization range of each model
+data_range:
+    '-0.5_0.5':
+        - swtn
+        - swtn_large
+        - estrnn
+
+    '0_1':
+        - mprnet
+        - mimo
+        - mimoPlus  
+        - restormer
+        - cdvd_tsp
+        - mtrnn
+        - meta
+
+    '0_255': []
+
+# Video deblurring model or single image deblurring model
+image_or_video:
+    image:
+        - swtn
+        - mprnet
+        - mimo
+        - mimoPlus
+        - restormer
+        - mtrnn
+        - meta
+        
+    video:
+        - estrnn
+        - cdvd_tsp

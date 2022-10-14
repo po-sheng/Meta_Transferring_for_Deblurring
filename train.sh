@@ -1,0 +1,36 @@
+# train experiment
+python3 main.py --save_dir ../exp/train/GOPRO/reblur_exp_attn_zero2one_gan \
+               --reset True \
+               --log_file_name train.log \
+               --random_seed 43 \
+               --gpu_id 2,3 \
+               --num_workers 12 \
+               --dataset GOPRO \
+               --dataset_dir /disk1/psliu/datasets/benchMark/GOPRO_Large/ \
+               --batch_size 6 \
+               --reblur_model attn \
+               --deblur_model mprnet \
+               --reblur_lr 1e-4 \
+               --deblur_lr 1e-4 \
+               --input_w 256 \
+               --input_h 256 \
+               --scheduler cosine \
+               --num_epochs 1000 \
+               --deblur_warnup 0 \
+               --save_every 200 \
+               --val_every 1000 \
+               --gan True \
+               --n_critics 1 \
+               --gan_lr 2e-6 \
+               --gan_ratio 0.5 \
+               --combine_update False \
+               --alt_update False \
+               --features 32 \
+               --reblur_result False \
+               --reblur_layers 3 \
+               --reblur_ratio 0.5 \
+               --n_frames 5 \
+               --full_img_exp True \
+               --deblur_model_path weights/MPRNet/model_deblurring.pth \
+#                --reblur_model_path ../exp/train/GOPRO/reblur_exp_attn_mprnet_gan_1000/model/reblur_01000.pt \
+#                --gan_model_path ../exp/train/GOPRO/reblur_exp_attn_mprnet_gan_1000/model/gan_01000.pt
