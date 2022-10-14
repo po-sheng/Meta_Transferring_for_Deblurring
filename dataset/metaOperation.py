@@ -6,10 +6,6 @@ from imageio import imread
 import torch
 import torch.nn as nn
 
-from .niqe import *
-# from skvideo.measure import niqe
-from .brisque import *
-
 from utils import calc_psnr
 
 def reblur_method(method, img_ids, img_list):
@@ -141,17 +137,6 @@ def self_shift(img, diff_method="psnr"):
             diff_sum += np.average(abs(img[Y_s:h-Y_t, X_s:w-X_t] - img[Y_t:h-Y_s, X_t:w-X_s]))
     
     return diff_sum
-
-
-def Niqe(img):
-    target = 0.2989 * img[:, :, 0] + 0.5870 * img[:, :, 1] + 0.1140 * img[:, :, 2]
-    return niqe(target/256)
-
-
-def Brisque(img):
-    brisque = BRISQUE()
-    target = 0.2989 * img[:, :, 0] + 0.5870 * img[:, :, 1] + 0.1140 * img[:, :, 2]
-    return brisque.get_score(target/256)
 
 
 def find_sharp(img, method="self-shift", diff_method="psnr"):
