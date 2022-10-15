@@ -5,7 +5,6 @@ import torch.nn as nn
 
 from .baseModel import BaseModel
 from .basicModule import ReblurModel, DeblurModel
-from .SWTN import SWTN
 
 
 class Model(BaseModel):
