@@ -23,8 +23,6 @@ python3 main.py --save_dir ../exp/train/GOPRO/reblur_exp_attn_zero2one_gan \
                --n_critics 1 \
                --gan_lr 2e-6 \
                --gan_ratio 0.5 \
-               --combine_update False \
-               --alt_update False \
                --features 32 \
                --reblur_result False \
                --reblur_layers 3 \

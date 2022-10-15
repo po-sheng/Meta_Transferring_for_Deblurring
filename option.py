@@ -41,9 +41,9 @@ parser.add_argument('--img_w', type=int, default=1280,
                     help='The width of the img')
 parser.add_argument('--img_h', type=int, default=720,
                     help='The height of the img')
-parser.add_argument('--input_w', type=int, default=640,
+parser.add_argument('--input_w', type=int, default=1280,
                     help='The width of the input patch')
-parser.add_argument('--input_h', type=int, default=384,
+parser.add_argument('--input_h', type=int, default=720,
                     help='The height of the input patch')
 parser.add_argument('--normalized', type=str2bool, default=True,
                     help='Data range normalize to 1')
@@ -65,9 +65,9 @@ parser.add_argument('--gan_model_path', type=str, default=None,
                     help='the pretrained model path for discriminator for GAN')
 parser.add_argument('--video', type=str2bool, default=False,
                     help='deblur model is video deblurring or single image deblurring method')
-parser.add_argument('--features', type=int, default=128,
+parser.add_argument('--features', type=int, default=32,
                     help='The number of the channels in the reblur network')
-parser.add_argument('--reblur_layers', type=int, default=4,
+parser.add_argument('--reblur_layers', type=int, default=3,
                     help='The number of the channels in the reblur network')
 parser.add_argument('--n_frames', type=int, default=5,
                     help='The number of frames input to reblur model at a time')
@@ -113,9 +113,9 @@ parser.add_argument('--deblur_warnup', type=int, default=0,
 ### meta learning setting
 parser.add_argument('--inner_lr', type=float, default=1e-6,
                     help='Learning rate for meta inner loop')
-parser.add_argument('--meta_lr', type=float, default=1e-6,
+parser.add_argument('--meta_lr', type=float, default=1e-7,
                     help='Learning rate for meta outer loop')
-parser.add_argument('--use_fix_update', type=str2bool, default=False,
+parser.add_argument('--use_fix_update', type=str2bool, default=True,
                     help='whether to use fix update or percentage base on video frame number')
 parser.add_argument('--n_updates', type=int, default=30,
                     help='Number of support data patch to be used in both meta training and testing')
@@ -133,7 +133,7 @@ parser.add_argument('--finetuning', type=str2bool, default=False,
                     help='finetuning mode')
 parser.add_argument('--support_optim', type=str, default='adam',
                     help='the optimizer of support set')
-parser.add_argument('--support_size', type=int, default=128,
+parser.add_argument('--support_size', type=int, default=256,
                     help='the patch size use for support set')
 parser.add_argument('--support_epochs', type=int, default=1,
                     help='The number of support set epochs')
@@ -149,7 +149,7 @@ parser.add_argument('--full_img_exp', type=str2bool, default=False,
                     help='whether to use full image as inference(query)')
 parser.add_argument('--full_img_sup', type=str2bool, default=False,
                     help='whether to use full image as support set')
-parser.add_argument('--use_reblur_pair', type=str2bool, default=False,
+parser.add_argument('--use_reblur_pair', type=str2bool, default=True,
                     help='whether to use blur-reblur pair as support set in meta training')
 parser.add_argument('--reblur_method', type=str, default="4x",
                     help='decide which reblur methods are be used (base, 4x, 2x, 4x_5)')
@@ -159,7 +159,7 @@ parser.add_argument('--cycle_update', type=str2bool, default=False,
                     help='whether to use cycle consistency loss when update reblur model')
 parser.add_argument('--reblur_backward', type=str2bool, default=False,
                     help='whether to backward reblurs loss during support set')
-parser.add_argument('--combine_update', type=str2bool, default=True,
+parser.add_argument('--combine_update', type=str2bool, default=False,
                     help='whether to combine reblur and blur data at meta training query set')
 parser.add_argument('--cycle_block', type=str2bool, default=False,
                     help='whether to block deblurring model to update by cycle loss')
