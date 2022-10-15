@@ -49,7 +49,7 @@ We train our reblurring model for 1000 epochs.
 sh train.sh
 
 # Testing
-sh test.sddh
+sh test.sh
 ```
 
 <!---
