@@ -1,5 +1,5 @@
 # Meta Transferring for Deblurring (BMVC 2022)
-Pytorch implementation of "[Meta Transferring for Deblurring]()" (BMVC 2022). <br />
+Pytorch implementation of "[Meta Transferring for Deblurring](https://arxiv.org/abs/2210.08036)" (BMVC 2022). <br />
 The implementation use part of the code from [MPRNet](https://github.com/swz30/MPRNet), [MTRNN](https://github.com/Dong1P/MTRNN), [Restormer](https://github.com/swz30/Restormer), and [CDVD-TSP](https://github.com/csbhr/CDVD-TSP).
 
 <img src="./figure/training_scheme.png" width=800 div align=center />
@@ -74,3 +74,11 @@ sh test.sh
     - Modify dataset hierachy in the file
 
 ## Citation
+```
+@inproceedings{liu2022meta,
+  title={Meta Transferring for Deblurring},
+  author={Liu, Po-Sheng and Tsai, Fu-Jen and Peng, Yan-Tsung and Tsai, Chung-Chi and Lin, Chia-Wen and Lin, Yen-Yu},
+  booktitle={BMVC},
+  year={2022}
+}
+```
